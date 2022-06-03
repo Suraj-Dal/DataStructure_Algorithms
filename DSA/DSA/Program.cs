@@ -1,4 +1,4 @@
-﻿Console.WriteLine("1.Permutation\n2.Binary Search\n3.Insertion Sort\n4.Bubble Sort\n5.Anagram Detection\n6.UnOrdered List\nEnter your choice:");
+﻿Console.WriteLine("1.Permutation\n2.Binary Search\n3.Insertion Sort\n4.Bubble Sort\n5.Anagram Detection\n6.UnOrdered List\n7.Ordered List\nEnter your choice:");
 int choice = Convert.ToInt32(Console.ReadLine());
 DSA.Algorithm algo = new DSA.Algorithm();
 DSA.DataStructure ds = new DSA.DataStructure();
@@ -51,6 +51,11 @@ switch (choice)
         Console.WriteLine("Enter word to search:");
         string w = Console.ReadLine();
         ds.UnOrdered(w);
+        break;
+    case 7:
+        Console.WriteLine("Enter word to search:");
+        string order = Console.ReadLine();
+        ds.Ordered(order);
         break;
     default:
         Console.WriteLine("Invalid choice.");

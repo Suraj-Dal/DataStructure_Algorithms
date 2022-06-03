@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.IO;
 namespace DSA
 {
     internal class Algorithm
@@ -32,6 +32,50 @@ namespace DSA
             ch[s] = ch[e];
             ch[e] = c;
             return string.Join("",ch);
+        }
+        public void search(string str)
+        {
+            string text = File.ReadAllText(@"D:\Suraj\Projects\DataStructure_Algorithms\binary.txt");
+            string[] words = text.Split(' ');
+            Array.Sort(words);
+            int flag = 0;
+            int s = 0, e = words.Length;
+            while (s < e - 1)
+            {
+
+                int mid = (s + e) / 2;
+                if (words[mid].Equals(str) || words[mid + 1].Equals(str) || words[mid - 1].Equals(str))
+                {
+                    Console.WriteLine("Word found in file.");
+                    return;
+                }
+                else if (words[mid].CompareTo(str) > 0)
+                    e = mid - 1;
+                else if (words[mid].CompareTo(str) < 0)
+                    s = mid + 1;
+            }
+            if (flag == 0)
+            {
+                Console.WriteLine("Word not found in file.");
+            }
+        }
+        public void InsertionSort(string[] array)
+        {
+            for (int i = 1; i < array.Length; i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    if (array[j].CompareTo(array[i]) > 0)
+                    {
+                        string temp = array[j];
+                        array[j] = array[i];
+                        array[i] = temp;
+                    }
+                }
+            }
+            Console.WriteLine("Sorted array is:");
+            for (int i = 0; i < array.Length; i++)
+                Console.WriteLine(array[i]);
         }
     }
 }

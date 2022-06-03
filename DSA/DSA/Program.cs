@@ -1,4 +1,4 @@
-﻿Console.WriteLine("1.Permutation\n2.Binary Search\n3.Insertion Sort\n4.Bubble Sort\n5.Anagram Detection\n6.UnOrdered List\n7.Ordered List\nEnter your choice:");
+﻿Console.WriteLine("1.Permutation\n2.Binary Search\n3.Insertion Sort\n4.Bubble Sort\n5.Anagram Detection\n6.UnOrdered List\n7.Ordered List\n8.Balanced Expression\nEnter your choice:");
 int choice = Convert.ToInt32(Console.ReadLine());
 DSA.Algorithm algo = new DSA.Algorithm();
 DSA.DataStructure ds = new DSA.DataStructure();
@@ -56,6 +56,11 @@ switch (choice)
         Console.WriteLine("Enter word to search:");
         string order = Console.ReadLine();
         ds.Ordered(order);
+        break;
+    case 8:
+        Console.WriteLine("Enter Arithmetic Expression:");
+        string exp = Console.ReadLine();
+        ds.BalancedParanthesis(exp);
         break;
     default:
         Console.WriteLine("Invalid choice.");

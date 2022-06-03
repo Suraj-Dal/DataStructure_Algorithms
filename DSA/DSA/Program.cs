@@ -1,4 +1,4 @@
-﻿Console.WriteLine("1.Permutation\n2.Binary Search\n3.Insertion Sort\nEnter your choice:");
+﻿Console.WriteLine("1.Permutation\n2.Binary Search\n3.Insertion Sort\n4.Bubble Sort\nEnter your choice:");
 int choice = Convert.ToInt32(Console.ReadLine());
 DSA.Algorithm algo = new DSA.Algorithm();
 switch (choice)
@@ -26,6 +26,18 @@ switch (choice)
             array[i] = s;
         }
         algo.InsertionSort(array);
+        break;
+    case 4:
+        Console.WriteLine("How many strings you want to add:");
+        int n = Convert.ToInt32(Console.ReadLine());
+        string[] unsorted = new string[n];
+        for (int i = 0; i < n; i++)
+        {
+            Console.WriteLine("Enter string:");
+            string s = Console.ReadLine();
+            unsorted[i] = s;
+        }
+        algo.BubbleSort(unsorted);
         break;
     default:
         Console.WriteLine("Invalid choice.");

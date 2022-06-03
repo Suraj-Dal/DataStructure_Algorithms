@@ -1,4 +1,4 @@
-﻿Console.WriteLine("1.Permutation\n2.Binary Search\n3.Insertion Sort\n4.Bubble Sort\nEnter your choice:");
+﻿Console.WriteLine("1.Permutation\n2.Binary Search\n3.Insertion Sort\n4.Bubble Sort\n5.Anagram Detection\nEnter your choice:");
 int choice = Convert.ToInt32(Console.ReadLine());
 DSA.Algorithm algo = new DSA.Algorithm();
 switch (choice)
@@ -38,6 +38,13 @@ switch (choice)
             unsorted[i] = s;
         }
         algo.BubbleSort(unsorted);
+        break;
+    case 5:
+        Console.WriteLine("Enter first strings:");
+        string s1 = Console.ReadLine();
+        Console.WriteLine("Enter first strings:");
+        string s2 = Console.ReadLine();
+        algo.Anagram(s1, s2);
         break;
     default:
         Console.WriteLine("Invalid choice.");

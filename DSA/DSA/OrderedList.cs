@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace DSA
 {
-    internal class DataStructure
+    internal class OrderedList
     {
         Node head;
-        public void UnOrdered(string str)
+        public void Ordered(string str)
         {
-            string text = File.ReadAllText(@"D:\Suraj\Projects\DataStructure_Algorithms\UnOrdered.txt");
+            string text = File.ReadAllText(@"D:\Suraj\Projects\DataStructure_Algorithms\Ordered.txt");
             string[] words = text.Split(' ');
+            Array.Sort(words);
             for (int i = 0; i < words.Length; i++)
             {
                 Node node = new Node(words[i]);
@@ -46,7 +46,7 @@ namespace DSA
             }
             Console.WriteLine("List After searching word:");
             Node node1 = this.head;
-            string[] array = new string[100]; 
+            string[] array = new string[100];
             int j = 0;
             while (node1 != null)
             {
@@ -56,7 +56,7 @@ namespace DSA
             }
             string concat = string.Concat(array);
             Console.WriteLine(concat);
-            File.WriteAllText(@"D:\Suraj\Projects\DataStructure_Algorithms\UnOrdered.txt", concat);
+            File.WriteAllText(@"D:\Suraj\Projects\DataStructure_Algorithms\Ordered.txt", concat);
         }
     }
 }

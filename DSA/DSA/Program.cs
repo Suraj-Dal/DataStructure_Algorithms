@@ -1,6 +1,12 @@
 ﻿Console.WriteLine("1.Permutation\n2.Binary Search\n3.Insertion Sort\n4.Bubble Sort\n5.Anagram Detection\n6.UnOrdered List\n7.Ordered List\n8.Balanced Expression\nEnter your choice:");
 int choice = Convert.ToInt32(Console.ReadLine());
 DSA.Algorithm algo = new DSA.Algorithm();
+DSA.BinarySearch bs = new DSA.BinarySearch();
+DSA.Anagram an = new DSA.Anagram();
+DSA.BubbleSort bubbleSort = new DSA.BubbleSort();
+DSA.InsertionSort insertionSort = new DSA.InsertionSort();
+DSA.OrderedList ol = new DSA.OrderedList();
+DSA.BalancedParanthesis bl = new DSA.BalancedParanthesis();
 DSA.DataStructure ds = new DSA.DataStructure();
 switch (choice)
 {
@@ -14,7 +20,7 @@ switch (choice)
     case 2:
         Console.WriteLine("enter word to search:");
         string str = Console.ReadLine();
-        algo.search(str);
+        bs.search(str);
         break;
     case 3:
         Console.WriteLine("How many strings you want to add:");
@@ -26,7 +32,7 @@ switch (choice)
             string s = Console.ReadLine();
             array[i] = s;
         }
-        algo.InsertionSort(array);
+        insertionSort.insertionSort(array);
         break;
     case 4:
         Console.WriteLine("How many strings you want to add:");
@@ -38,14 +44,14 @@ switch (choice)
             string s = Console.ReadLine();
             unsorted[i] = s;
         }
-        algo.BubbleSort(unsorted);
+        bubbleSort.bubbleSort(unsorted);
         break;
     case 5:
         Console.WriteLine("Enter first strings:");
         string s1 = Console.ReadLine();
         Console.WriteLine("Enter first strings:");
         string s2 = Console.ReadLine();
-        algo.Anagram(s1, s2);
+        an.anagram(s1, s2);
         break;
     case 6:
         Console.WriteLine("Enter word to search:");
@@ -55,12 +61,12 @@ switch (choice)
     case 7:
         Console.WriteLine("Enter word to search:");
         string order = Console.ReadLine();
-        ds.Ordered(order);
+        ol.Ordered(order);
         break;
     case 8:
         Console.WriteLine("Enter Arithmetic Expression:");
         string exp = Console.ReadLine();
-        ds.BalancedParanthesis(exp);
+        bl.balancedParanthesis(exp);
         break;
     default:
         Console.WriteLine("Invalid choice.");
